@@ -1,4 +1,10 @@
 # User-specific stuff
+Test_servers/Server*/logs/
+Test_servers/Server*/world*/
+Test_servers/Server*/plugins/WorldSwapper2
+Test_servers/hub/logs/
+Test_servers/hub/world*/
+Test_servers/proxy_server/logs/
 .idea/
 
 *.iml

@@ -1,8 +1,8 @@
 @echo off
 REM COPY
 cd ..\target
-copy /Y WorldSwapper2-0.1-SNAPSHOT.jar ..\Test_servers\Server1\plugins
-copy /Y WorldSwapper2-0.1-SNAPSHOT.jar ..\Test_servers\Server2\plugins
+copy /Y WorldSwapper2-0.1-SNAPSHOT.jar ..\Test_servers\Server1\mods
+copy /Y WorldSwapper2-0.1-SNAPSHOT.jar ..\Test_servers\Server2\mods
 
 REM RUN start.bat
 cd ..\Test_servers
