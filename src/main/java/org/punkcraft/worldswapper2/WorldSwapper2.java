@@ -1,5 +1,6 @@
 package org.punkcraft.worldswapper2;
 
+import org.spongepowered.api.Sponge;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.state.GameStartedServerEvent;
@@ -17,6 +18,7 @@ public class WorldSwapper2 {
     @Listener
     public void onServerStart(GameStartedServerEvent event) {
         logger.info("Successfully running ExamplePlugin!!!");
+        Sponge.getEventManager().registerListeners(this, new WSListener());
     }
 
 }
