@@ -1,0 +1,29 @@
+{
+  "loader": {
+    "name": "java_plain",
+    "version": "1.0"
+  },
+  "license": "All-Rights-Reserved",
+  "plugins": [
+    {
+      "id": "worldswapper2",
+      "name": "WorldSwapper2",
+      "version": "${version}",
+      "entrypoint": "org.punkcraft.worldswapper2.WorldSwapper2",
+      "description": "My plugin description",
+      "branding": {},
+      "links": {
+      },
+      "contributors": [
+      ],
+      "dependencies": [
+        {
+          "id": "spongeapi",
+          "version": "8.1.0",
+          "load-order": "after",
+          "optional": false
+        }
+      ]
+    }
+  ]
+}
