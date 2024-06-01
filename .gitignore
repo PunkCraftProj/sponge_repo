@@ -25,6 +25,7 @@ out/
 
 # Package Files #
 *.jar
+!Test_servers/Server*/**/*.jar
 *.war
 *.nar
 *.ear
