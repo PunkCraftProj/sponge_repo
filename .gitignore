@@ -25,7 +25,9 @@ out/
 
 # Package Files #
 *.jar
-!Test_servers/Server*/**/*.jar
+!Test_servers/Server*/*.jar
+!Test_servers/proxy_server/*.jar
+!Test_servers/hub/*.jar
 Test_servers/Server*/libraries
 *.war
 *.nar
