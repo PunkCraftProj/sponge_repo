@@ -1,10 +1,13 @@
 package org.punkcraft.worldswapper2;
 
+import com.google.common.io.ByteArrayDataOutput;
+import com.google.common.io.ByteStreams;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.entity.MoveEntityEvent;
+import org.spongepowered.api.network.ChannelBinding;
 import org.spongepowered.api.text.Text;
 
 public class WSListener {
@@ -18,10 +21,13 @@ public class WSListener {
             if (Math.abs(player.getLocation().getBlockX()) > 10000 || Math.abs(player.getLocation().getBlockZ()) > 10000) {
                 player.sendMessage(Text.of("Ваши координаты больше 10000! Выполнение команды /server..."));
 
-                // Выполнение команды /server от имени игрока
-                Sponge.getCommandManager().process(player, "server");
-            } else {
-                player.sendMessage(Text.of("Ваши координаты меньше 10000, пропускаем выполнение команды."));
+                // Создание данных для отправки
+                ByteArrayDataOutput out = ByteStreams.newDataOutput();
+                out.writeUTF("server");
+
+                // Отправка данных через канал
+                ChannelBinding.RawDataChannel channel = ((WorldSwapper2) Sponge.getPluginManager().getPlugin("worldswapper2").get().getInstance().get()).getChannel();
+                channel.sendTo(player, (buf) -> buf.writeBytes(out.toByteArray()));
             }
         }
     }
