@@ -1,4 +1,4 @@
-package org.punkcraft.worldswapper2;
+package org.punkcraft.oneworld;
 
 import com.google.inject.Inject;
 import org.slf4j.Logger;
@@ -9,8 +9,8 @@ import org.spongepowered.api.network.ChannelBinding;
 import org.spongepowered.api.network.ChannelRegistrar;
 import org.spongepowered.api.plugin.Plugin;
 
-@Plugin(id = "worldswapper2", name = "WorldSwapper2", version = "1.0", description = "WorldSwapper2")
-public class WorldSwapper2 {
+@Plugin(id = "oneworldsponge", name = "OneWorldSponge", version = "1.0", description = "OneWorldSponge")
+public class OneWorldSponge {
 
     @Inject
     private Logger logger;

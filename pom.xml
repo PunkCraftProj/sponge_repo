@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.punkcraft</groupId>
-    <artifactId>WorldSwapper2</artifactId>
+    <artifactId>OneWorldSponge</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>WorldSwapper2</name>
+    <name>OneWorldSponge</name>
 
     <properties>
         <java.version>8</java.version>

@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "uuid": "cb644569-1c51-30f5-bd04-5854ea630122",
+    "name": "Kinzeun",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

@@ -1,0 +1,4 @@
+#Для прокси скачать 17 JDK
+https://jdk.java.net/archive/
+
+И поменять в install.bat путь к нему

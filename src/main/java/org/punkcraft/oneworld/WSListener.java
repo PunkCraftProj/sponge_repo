@@ -1,4 +1,4 @@
-package org.punkcraft.worldswapper2;
+package org.punkcraft.oneworld;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
@@ -26,7 +26,7 @@ public class WSListener {
                 out.writeUTF("server");
 
                 // Отправка данных через канал
-                ChannelBinding.RawDataChannel channel = ((WorldSwapper2) Sponge.getPluginManager().getPlugin("worldswapper2").get().getInstance().get()).getChannel();
+                ChannelBinding.RawDataChannel channel = ((OneWorldSponge) Sponge.getPluginManager().getPlugin("worldswapper2").get().getInstance().get()).getChannel();
                 channel.sendTo(player, (buf) -> buf.writeBytes(out.toByteArray()));
             }
         }
