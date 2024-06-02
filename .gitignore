@@ -7,6 +7,7 @@ Test_servers/hub/world*/
 Test_servers/proxy_server/logs/
 Test_servers/Server*/libraries/
 Test_servers/Server*/.mixin.out/
+Test_servers/GlobalData/*/*
 .idea/
 
 *.iml
