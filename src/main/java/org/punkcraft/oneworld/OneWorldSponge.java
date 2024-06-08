@@ -15,19 +15,26 @@ public class OneWorldSponge {
     @Inject
     private Logger logger;
 
-    private ChannelBinding.RawDataChannel channel;
+    private ChannelBinding.IndexedMessageChannel channel;
 
     @Listener
     public void onServerStart(GameStartedServerEvent event) {
-        logger.info("Successfully running WorldSwapper2!!!");
-        Sponge.getEventManager().registerListeners(this, new WSListener());
+        logger.info("Successfully running OneWorldSponge!!!");
 
-        // Регистрация канала плагина
         ChannelRegistrar channelRegistrar = Sponge.getChannelRegistrar();
-        this.channel = channelRegistrar.createRawChannel(this, "velocity:command");
+        this.channel = channelRegistrar.createChannel(this, "custom:main");
+
+        // Регистрация сообщения
+        this.channel.registerMessage(TestMessage.class, 0);
+
+        Sponge.getEventManager().registerListeners(this, new WSListener(this, this.channel));
     }
 
-    public ChannelBinding.RawDataChannel getChannel() {
+    public ChannelBinding.IndexedMessageChannel getChannel() {
         return channel;
+    }
+
+    public Logger getLogger() {
+        return logger;
     }
 }
