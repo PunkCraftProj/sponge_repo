@@ -11,7 +11,6 @@ import org.spongepowered.api.plugin.Plugin;
 
 @Plugin(id = "oneworldsponge", name = "OneWorldSponge", version = "1.0", description = "OneWorldSponge")
 public class OneWorldSponge {
-
     @Inject
     private Logger logger;
 
