@@ -27,7 +27,7 @@ public class WSListener {
                 player.sendMessage(Text.of("Ваши координаты больше 10000!"));
 
                 // Создаем и отправляем сообщение
-                TestMessage testMessage = new TestMessage();
+                TestMessage testMessage = new TestMessage("KinZeun server2");
                 channel.sendTo(player, testMessage);
             }
         }

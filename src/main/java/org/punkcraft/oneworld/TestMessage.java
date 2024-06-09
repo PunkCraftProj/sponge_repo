@@ -4,27 +4,27 @@ import org.spongepowered.api.network.ChannelBuf;
 import org.spongepowered.api.network.Message;
 
 public class TestMessage implements Message {
-    private String content;
+    private String string;
 
-    public TestMessage() {
-        this.content = "Это тестовое сообщение";
+    public TestMessage(String string) {
+        this.string = string;
     }
 
     @Override
     public void readFrom(ChannelBuf buf) {
-        this.content = buf.readString();
+        this.string = buf.readString();
     }
 
     @Override
     public void writeTo(ChannelBuf buf) {
-        buf.writeString(this.content);
+        buf.writeString(this.string);
     }
 
     public String getContent() {
-        return content;
+        return string;
     }
 
     public void setContent(String content) {
-        this.content = content;
+        this.string = content;
     }
 }
