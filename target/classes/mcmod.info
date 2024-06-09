@@ -1,0 +1,14 @@
+[
+    {
+        "modid": "oneworldsponge",
+        "name": "OneWorldSponge",
+        "version": "1.0",
+        "description": "OneWorldSponge",
+        "dependencies": [
+            "spongeapi@7.2.0"
+        ],
+        "requiredMods": [
+            "spongeapi@7.2.0"
+        ]
+    }
+]
