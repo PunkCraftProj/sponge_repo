@@ -30,8 +30,6 @@ public class OneWorldSponge {
         Sponge.getEventManager().registerListeners(this, new WSListener(this, this.channel));
     }
 
-    private void 
-
     public ChannelBinding.IndexedMessageChannel getChannel() {
         return channel;
     }
