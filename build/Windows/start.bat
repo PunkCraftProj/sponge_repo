@@ -1,7 +1,7 @@
 @echo off
 REM RUN start.bat
 cd ..\..\
-cd ..\ServerOneWorld
+cd ..\server_repo
 cd Server1
 start start.bat
 cd ..\Server2

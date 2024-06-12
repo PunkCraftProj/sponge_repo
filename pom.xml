@@ -94,5 +94,10 @@
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.spongepowered</groupId>
+            <artifactId>configurate-yaml</artifactId>
+            <version>3.6.1</version> <!-- замените на актуальную версию Configurate YAML -->
+        </dependency>
     </dependencies>
 </project>

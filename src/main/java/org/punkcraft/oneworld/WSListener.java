@@ -7,13 +7,17 @@ import org.spongepowered.api.event.entity.MoveEntityEvent;
 import org.spongepowered.api.network.ChannelBinding;
 import org.spongepowered.api.text.Text;
 
+import java.util.List;
+
 public class WSListener {
     private final OneWorldSponge plugin;
     private final ChannelBinding.IndexedMessageChannel channel;
+    private final List<Zone> zones;
 
-    public WSListener(OneWorldSponge plugin, ChannelBinding.IndexedMessageChannel channel) {
+    public WSListener(OneWorldSponge plugin, ChannelBinding.IndexedMessageChannel channel, List<Zone> zones) {
         this.plugin = plugin;
         this.channel = channel;
+        this.zones = zones;
     }
 
     @Listener
@@ -21,14 +25,22 @@ public class WSListener {
         Entity entity = event.getTargetEntity();
         if (entity instanceof Player) {
             Player player = (Player) entity;
+            int x = player.getLocation().getBlockX();
+            int y = player.getLocation().getBlockY();
+            int z = player.getLocation().getBlockZ();
 
-            // Проверяем координаты игрока
-            if (Math.abs(player.getLocation().getBlockX()) > 10000 || Math.abs(player.getLocation().getBlockZ()) > 10000) {
-                player.sendMessage(Text.of("Ваши координаты больше 10000!"));
+            for (Zone zone : zones) {
+                player.sendMessage(Text.of("Перебор зоны" + zone.getName()));
+                if (zone.isWithinZone(x, y, z)) {
+                    player.sendMessage(Text.of("Вы находитесь в зоне: " + zone.getName()));
 
-                // Создаем и отправляем сообщение
-                TestMessage testMessage = new TestMessage("KinZeun server2");
-                channel.sendTo(player, testMessage);
+                    // Создаем и отправляем сообщение
+                    TestMessage testMessage = new TestMessage(player.getName() + " " + zone.getName());
+                    channel.sendTo(player, testMessage);
+
+                    // Выход из цикла после нахождения первой зоны
+                    break;
+                }
             }
         }
     }
